@@ -2,7 +2,8 @@ import logo from '../assets/logo.png';
 
 export default function Navbar() {
   return (
-    <header className="w-full bg-white border-b border-gray-200 shadow-sm fixed top-0 left-0 right-0 z-50">
+    <>
+    <header className="w-full bg-white border-b border-gray-200 shadow-sm top-0 left-0 right-0 z-">
       <div className="w-full px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo Section */}
@@ -34,5 +35,6 @@ export default function Navbar() {
         </div>
       </div>
     </header>
+    </>
   );
 }
