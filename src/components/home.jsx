@@ -11,7 +11,7 @@ function Home() {
     
     const autoScroll = async () => {
       while (true) {
-        await new Promise(resolve => setTimeout(resolve, 7500));
+        await new Promise(resolve => setTimeout(resolve, 100000));
         
         const hash = window.location.hash;
         let currentSlide = parseInt(hash.slice(6));  
@@ -63,8 +63,9 @@ function Home() {
       </div>
 
       {/* News */}
-      <div className="w-full bg-gray-100 h-[80vh] flex flex-col items-center drop-shadow-2xl">
-        <h2 className="text-black text-7xl font-semibold text-center pt-25">Latest News</h2>
+      <div className="w-full h-[15vh] bg-gradient-to-b from-white to-gray-800"></div>
+      <div className="w-full h-[80vh] bg-gray-800 flex flex-col items-center drop-shadow-2xl">
+        <h2 className="text-white text-7xl font-semibold text-center pt-25">Latest News</h2>
 
         {/* Carousel */}
         <div className="carousel w-[50%] h-[30vh] mt-10 rounded-2xl drop-shadow-lg">
