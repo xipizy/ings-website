@@ -8,12 +8,13 @@ import { useEffect } from 'react';
 function Home() {
 
   useEffect(() => {
-    let currentSlide = 1;
     
     const autoScroll = async () => {
       while (true) {
         await new Promise(resolve => setTimeout(resolve, 7500));
         
+        const hash = window.location.hash;
+        let currentSlide = parseInt(hash.slice(6));  
         currentSlide = (currentSlide % 4) + 1;
         const link = document.querySelector(`a[href="#slide${currentSlide}"]`);
         if (link) {
@@ -62,11 +63,11 @@ function Home() {
       </div>
 
       {/* News */}
-      <div className="w-full bg-gray-100 h-[80vh] flex flex-col items-center">
+      <div className="w-full bg-gray-100 h-[80vh] flex flex-col items-center drop-shadow-2xl">
         <h2 className="text-black text-7xl font-semibold text-center pt-25">Latest News</h2>
 
         {/* Carousel */}
-        <div className="carousel w-[50%] h-[30vh] mt-10">
+        <div className="carousel w-[50%] h-[30vh] mt-10 rounded-2xl drop-shadow-lg">
           <div id="slide1" className="carousel-item relative w-full">
             <img
               src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
