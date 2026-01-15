@@ -28,7 +28,9 @@ function Home() {
 
   return (
     <>
-       <Navbar/> 
+      <nav className="sticky top-0 z-2">
+        <Navbar/> 
+      </nav>
       <div className="w-full bg-black shadow-sm top-0 left-0 right-0 h-[80vh] relative">
         <img src={mainImage} alt="Main Banner" className="w-full h-full object-cover absolute z-1"/>
         <h1 className="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl md:text-6xl font-bold text-center">

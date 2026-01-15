@@ -1,5 +1,13 @@
 import logo from '../assets/logo.png';
 
+function handleClickStores() {
+  window.location.href = '/stores';
+}
+
+function handleClickHome() {
+  window.location.href = '/';
+}
+
 export default function Navbar() {
   return (
     <>
@@ -19,10 +27,10 @@ export default function Navbar() {
 
           {/* Navigation */}
           <nav className="flex items-center">
-            <button className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
+            <button onClick={handleClickHome} className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
               Home
             </button>
-            <button className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
+            <button onClick={handleClickStores} className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
               Stores
             </button>
             <button className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
