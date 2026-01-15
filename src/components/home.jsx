@@ -3,8 +3,27 @@ import locationIcon from '../assets/location.png';
 import wholesaleIcon from '../assets/wholesale.png';
 import checkIcon from '../assets/check.png';
 import mainImage from '../assets/main.png';
+import { useEffect } from 'react';
 
 function Home() {
+
+  useEffect(() => {
+    let currentSlide = 1;
+    
+    const autoScroll = async () => {
+      while (true) {
+        await new Promise(resolve => setTimeout(resolve, 7500));
+        
+        currentSlide = (currentSlide % 4) + 1;
+        const link = document.querySelector(`a[href="#slide${currentSlide}"]`);
+        if (link) {
+          link.click();
+        }
+      }
+    };
+    
+    autoScroll();
+  }, []);
 
   return (
     <>
@@ -45,7 +64,9 @@ function Home() {
       {/* News */}
       <div className="w-full bg-gray-100 h-[80vh] flex flex-col items-center">
         <h2 className="text-black text-7xl font-semibold text-center pt-25">Latest News</h2>
-        <div className="carousel w-[50%] h-[30vh]">
+
+        {/* Carousel */}
+        <div className="carousel w-[50%] h-[30vh] mt-10">
           <div id="slide1" className="carousel-item relative w-full">
             <img
               src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
@@ -65,9 +86,8 @@ function Home() {
             </div>
           </div>
           <div id="slide3" className="carousel-item relative w-full">
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
-              className="w-full" />
+            <div className="w-full bg-black">
+            </div>
             <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
               <a href="#slide2" className="btn btn-circle">❮</a>
               <a href="#slide4" className="btn btn-circle">❯</a>
