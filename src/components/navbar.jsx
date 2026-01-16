@@ -5,7 +5,7 @@ function handleClickStores() {
 }
 
 function handleClickHome() {
-  window.location.href = '/';
+  window.location.href = '/#slide1';
 }
 
 function handleClickContact() {

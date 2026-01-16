@@ -51,7 +51,7 @@ export default function WholesaleInquiry() {
             backgroundColor: 'rgba(0,0,0,0.6)'
             }}
         >
-            <div className="text-center text-white z-10">
+            <div className="text-center text-white z-1">
             <h1 className="text-5xl font-bold mb-6">Partner With Us</h1>
             <button onClick={scrollToForm} className="bg-red-500 hover:bg-red-600 text-white font-bold px-8 py-4 rounded-full text-xl transition-colors cursor-pointer">
                 Start Your Inquiry
