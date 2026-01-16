@@ -6,7 +6,7 @@ import Navbar from './navbar'
 export default function WholesaleInquiry() {
   const [formData, setFormData] = useState({
     name: '',
-    store: '',
+    store: 'AKL',
     email: '',
     message: ''
   });
@@ -28,6 +28,13 @@ export default function WholesaleInquiry() {
     console.log('Form submitted:', formData);
     alert('Thank you for your inquiry! We will contact you soon.');
     // Add your form submission logic here
+    // Clear
+    setFormData({
+      name: '',
+      store: 'AKL',
+      email: '',
+      message: ''
+    });
   };
 
   return (
@@ -106,17 +113,19 @@ export default function WholesaleInquiry() {
                 placeholder="Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-6 py-4 bg-gray-300 rounded text-lg placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="text-black w-full px-6 py-4 bg-gray-300 rounded text-lg placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
 
-                <input
-                type="text"
+                <select
                 name="store"
                 placeholder="Which Store HAM/AKL"
                 value={formData.store}
                 onChange={handleChange}
-                className="w-full px-6 py-4 bg-gray-300 rounded text-lg placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
+                className="text-black w-full px-6 py-4 bg-gray-300 rounded text-lg placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                >
+                    <option value="AKL">Auckland Store</option>
+                    <option value="HAM">Hamilton Store</option>
+                </select>
 
                 <input
                 type="email"
@@ -124,7 +133,7 @@ export default function WholesaleInquiry() {
                 placeholder="Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-6 py-4 bg-gray-300 rounded text-lg placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="text-black w-full px-6 py-4 bg-gray-300 rounded text-lg placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
 
                 <textarea
@@ -133,7 +142,7 @@ export default function WholesaleInquiry() {
                 value={formData.message}
                 onChange={handleChange}
                 rows="4"
-                className="w-full px-6 py-4 bg-gray-300 rounded text-lg placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 resize-none"
+                className="w-full px-6 py-4 bg-gray-300 rounded text-lg placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 resize-none text-black"
                 />
 
                 <div className="text-center">
