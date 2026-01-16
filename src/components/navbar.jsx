@@ -12,6 +12,10 @@ function handleClickContact() {
   window.location.href = '/contact';
 }
 
+function handleClickWholesale() {
+  window.location.href = '/wholesale';
+}
+
 export default function Navbar() {
   return (
     <>
@@ -37,7 +41,7 @@ export default function Navbar() {
             <button onClick={handleClickStores} className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
               Stores
             </button>
-            <button className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
+            <button onClick={handleClickWholesale} className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
               Wholesale Inquiries
             </button>
             <button onClick={handleClickContact} className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
