@@ -11,6 +11,23 @@ export default function StoreCards() {
     return now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
   };
 
+    const getTodayTimesAuckland = () => {
+        const now = new Date();
+        const day = now.getDay();
+        if (day === 0) return "Closed";
+        else if (day >= 1 && day <= 5) return "9:00 AM - 5:00 PM";
+        else if (day === 7) return "10:00 AM - 5:00 PM";
+    }
+
+    const getTodayTimesHamilton = () => {
+        const now = new Date();
+        const day = now.getDay();
+        if (day === 0) return "Closed";
+        else if (day >= 1 && day <= 5) return "9:00 AM - 5:30 PM";
+        else if (day === 6) return "8:00 AM - 5:00 PM";
+    }
+
+
   return (
     <>
     <nav className="sticky top-0 z-2">
@@ -24,7 +41,7 @@ export default function StoreCards() {
           <div className="relative h-40">
             <img 
               src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=300&fit=crop" 
-              alt="Downtown Store"
+              alt="Auckland Store"
               className="w-full h-full object-cover"
             />
             <div className="absolute top-3 right-3 bg-green-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
@@ -35,7 +52,7 @@ export default function StoreCards() {
 
           {/* Store Info */}
           <div className="p-5">
-            <h3 className="text-xl font-bold mb-3 text-black">Downtown Store</h3>
+            <h3 className="text-xl font-bold mb-3 text-black">Auckland Store</h3>
 
             <div className="flex items-start gap-2 text-gray-600 mb-5">
               <MapPin className="w-4 h-4 mt-0.5 text-blue-600 flex shrink-0" />
@@ -50,7 +67,7 @@ export default function StoreCards() {
               </div>
               
               <div className="flex justify-between items-center mb-2">
-                <span className="text-lg font-bold text-black">9:00 AM - 9:00 PM</span>
+                <span className="text-lg font-bold text-black">{getTodayTimesAuckland()}</span>
                 <span className="text-green-600 text-sm font-semibold">Open</span>
               </div>
 
@@ -123,7 +140,7 @@ export default function StoreCards() {
           <div className="relative h-40">
             <img 
               src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=300&fit=crop" 
-              alt="Westside Store"
+              alt="Hamilton Store"
               className="w-full h-full object-cover"
             />
             <div className="absolute top-3 right-3 bg-red-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
@@ -134,7 +151,7 @@ export default function StoreCards() {
 
           {/* Store Info */}
           <div className="p-5">
-            <h3 className="text-xl font-bold mb-3 text-black">Westside Store</h3>
+            <h3 className="text-xl font-bold mb-3 text-black">Hamilton Store</h3>
 
             <div className="flex items-start gap-2 text-gray-600 mb-5">
               <MapPin className="w-4 h-4 mt-0.5 text-blue-600 flex shrink-0" />
@@ -149,7 +166,7 @@ export default function StoreCards() {
               </div>
               
               <div className="flex justify-between items-center mb-2">
-                <span className="text-lg font-bold text-black">8:00 AM - 10:00 PM</span>
+                <span className="text-lg font-bold text-black">{getTodayTimesHamilton()}</span>
                 <span className="text-red-600 text-sm font-semibold">Closed</span>
               </div>
 
