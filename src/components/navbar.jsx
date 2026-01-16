@@ -8,6 +8,10 @@ function handleClickHome() {
   window.location.href = '/';
 }
 
+function handleClickContact() {
+  window.location.href = '/contact';
+}
+
 export default function Navbar() {
   return (
     <>
@@ -36,7 +40,7 @@ export default function Navbar() {
             <button className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
               Wholesale Inquiries
             </button>
-            <button className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
+            <button onClick={handleClickContact} className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
               Contact Us
             </button>
           </nav>

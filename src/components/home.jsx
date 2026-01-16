@@ -65,7 +65,7 @@ function Home() {
       </div>
 
       {/* News */}
-      <div className="w-full h-[15vh] bg-gradient-to-b from-white to-gray-800"></div>
+      <div className="w-full h-[15vh] bg-linear-to-b from-white to-gray-800"></div>
       <div className="w-full h-[80vh] bg-gray-800 flex flex-col items-center drop-shadow-2xl">
         <h2 className="text-white text-7xl font-semibold text-center pt-25">Latest News</h2>
 
