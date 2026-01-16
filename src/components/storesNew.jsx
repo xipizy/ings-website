@@ -16,7 +16,7 @@ export default function StoreCards() {
     <nav className="sticky top-0 z-2">
         <Navbar/> 
     </nav>
-    <div className="min-h-screen bg-gray-200 p-6">
+    <div className="min-h-max bg-gray-200 p-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
         {/* Downtown Store */}
         <div className="bg-white rounded-2xl shadow-md overflow-hidden">
@@ -73,15 +73,29 @@ export default function StoreCards() {
 
               {showAllHours1 && (
                 <div className="mt-3 space-y-2 text-sm text-black">
-                  <div className="flex justify-between"><span>Monday</span><span>9:00 AM - 9:00 PM</span></div>
-                  <div className="flex justify-between"><span>Tuesday</span><span>9:00 AM - 9:00 PM</span></div>
-                  <div className="flex justify-between"><span>Wednesday</span><span>9:00 AM - 9:00 PM</span></div>
-                  <div className="flex justify-between"><span>Thursday</span><span>9:00 AM - 9:00 PM</span></div>
-                  <div className="flex justify-between"><span>Friday</span><span>9:00 AM - 9:00 PM</span></div>
-                  <div className="flex justify-between"><span>Saturday</span><span>10:00 AM - 8:00 PM</span></div>
+                  <div className="flex justify-between"><span>Monday</span><span>9:00 AM - 5:00 PM</span></div>
+                  <div className="flex justify-between"><span>Tuesday</span><span>9:00 AM - 5:00 PM</span></div>
+                  <div className="flex justify-between"><span>Wednesday</span><span>9:00 AM - 5:00 PM</span></div>
+                  <div className="flex justify-between"><span>Thursday</span><span>9:00 AM - 5:00 PM</span></div>
+                  <div className="flex justify-between"><span>Friday</span><span>9:00 AM - 5:00 PM</span></div>
+                  <div className="flex justify-between"><span>Saturday</span><span>10:00 AM - 5:00 PM</span></div>
                   <div className="flex justify-between"><span className="text-red-600">Sunday</span><span className="text-red-600">Closed</span></div>
                 </div>
               )}
+            </div>
+
+            {/* Map */}
+            <div className="mt-5 pt-4 border-t">
+              <div className="w-full h-100 bg-gray-200 rounded mb-4 flex items-center justify-center">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6377.716950796189!2d174.83579619531918!3d-36.94154901302845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4eb9825f5013%3A0x17aa10ae5f4183d9!2sIngs%20Trading%20Ltd!5e0!3m2!1sen!2snz!4v1768529338123!5m2!1sen!2snz" 
+                        className="cover-full w-full h-full rounded mb-4"
+                        style={{ border: 0 }} 
+                        allowFullScreen="" 
+                        loading="lazy" 
+                        referrerPolicy="no-referrer-when-downgrade"
+                    />
+                </div>
             </div>
 
             {/* Action Buttons */}
@@ -99,6 +113,7 @@ export default function StoreCards() {
                 <span className="text-xs font-medium">Share</span>
               </button>
             </div>
+
           </div>
         </div>
 
@@ -139,7 +154,10 @@ export default function StoreCards() {
               </div>
 
               <div className="mb-4">
-                <p className="text-xs text-gray-600 ">Opens tomorrow at 8:00 AM</p>
+                <div className="w-full bg-green-100 rounded-full h-1.5">
+                  <div className="bg-green-500 h-1.5 rounded-full" style={{ width: '65%' }}></div>
+                </div>
+                <p className="text-xs text-gray-600 mt-1">Closed</p>
               </div>
 
               {/* View All Hours */}
@@ -154,15 +172,29 @@ export default function StoreCards() {
 
               {showAllHours2 && (
                 <div className="mt-3 space-y-2 text-sm text-black">
-                  <div className="flex justify-between"><span>Monday</span><span>8:00 AM - 10:00 PM</span></div>
-                  <div className="flex justify-between"><span>Tuesday</span><span>8:00 AM - 10:00 PM</span></div>
-                  <div className="flex justify-between"><span>Wednesday</span><span>8:00 AM - 10:00 PM</span></div>
-                  <div className="flex justify-between"><span>Thursday</span><span>8:00 AM - 10:00 PM</span></div>
-                  <div className="flex justify-between"><span>Friday</span><span>8:00 AM - 10:00 PM</span></div>
-                  <div className="flex justify-between"><span>Saturday</span><span>9:00 AM - 9:00 PM</span></div>
+                  <div className="flex justify-between"><span>Monday</span><span>9:00 AM - 5:30 PM</span></div>
+                  <div className="flex justify-between"><span>Tuesday</span><span>9:00 AM - 5:30 PM</span></div>
+                  <div className="flex justify-between"><span>Wednesday</span><span>9:00 AM - 5:30 PM</span></div>
+                  <div className="flex justify-between"><span>Thursday</span><span>9:00 AM - 5:30 PM</span></div>
+                  <div className="flex justify-between"><span>Friday</span><span>9:00 AM - 5:30 PM</span></div>
+                  <div className="flex justify-between"><span>Saturday</span><span>8:00 AM - 5:00 PM</span></div>
                   <div className="flex justify-between"><span className="text-red-600">Sunday</span><span className="text-red-600">Closed</span></div>
                 </div>
               )}
+            </div>
+
+            {/* Map */}
+            <div className="mt-5 pt-4 border-t">
+                <div className="w-full h-100 bg-gray-200 rounded mb-4 flex items-center justify-center">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6306.260393118721!2d175.26593904391362!3d-37.78698845646589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d6d220f606ea8e1%3A0x9d97216f18026327!2sIngs%20Trading!5e0!3m2!1sen!2snz!4v1768527965010!5m2!1sen!2snz" 
+                        className="cover-full w-full h-full rounded mb-4"
+                        style={{ border: 0 }} 
+                        allowFullScreen="" 
+                        loading="lazy" 
+                        referrerPolicy="no-referrer-when-downgrade"
+                    />
+                </div>
             </div>
 
             {/* Action Buttons */}
