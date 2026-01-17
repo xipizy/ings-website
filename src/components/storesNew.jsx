@@ -40,22 +40,15 @@ export default function StoreCards() {
         const hour = now.getHours();
         const minute = now.getMinutes();
 
+        let hourString = "";
         if (storeName === 'Auckland') {
             // Get starting hour based on day
-            let hourString = getTodayTimesAuckland();
-            let [startTime, endTime] = hourString.split(' - ');
-            let startHour = parseInt(startTime.split(':')[0]);
-            let endHour = parseInt(endTime.split(':')[0]) + 12; // Convert to 24-hour format
-
-            let totalHours = endHour - startHour;
-            let elapsedHours = hour + (minute / 60) - startHour;
-
-            if (elapsedHours < 0) return 0;
-            if (elapsedHours > totalHours) return 100;
-            return (elapsedHours / totalHours) * 100;
+            hourString = getTodayTimesAuckland();
         } else {
             // Get starting hour based on day
-            let hourString = getTodayTimesHamilton();
+            hourString = getTodayTimesHamilton();
+        }   
+
             let [startTime, endTime] = hourString.split(' - ');
             let startHour = parseInt(startTime.split(':')[0]);
             let endHour = parseInt(endTime.split(':')[0]) + (parseInt(endTime.split(':')[1]) / 60) + 12; // Convert to 24-hour format
@@ -66,7 +59,33 @@ export default function StoreCards() {
             if (elapsedHours < 0) return 0;
             if (elapsedHours > totalHours) return 100;
             return (elapsedHours / totalHours) * 100;
+    }
+
+    const getTimeToClosing = (storeName) => {
+        const now = new Date();
+        const day = now.getDay();
+        const hour = now.getHours();
+        const minute = now.getMinutes();
+
+        let hourString = "";
+        if (storeName === 'Auckland') {
+            // Get starting hour based on day
+            hourString = getTodayTimesAuckland();
+            
+        } else {
+            // Get starting hour based on day
+            hourString = getTodayTimesHamilton();
         }   
+            let [startTime, endTime] = hourString.split(' - ');
+            let startHour = parseInt(startTime.split(':')[0]);
+            let endHour = parseInt(endTime.split(':')[0]) + (parseInt(endTime.split(':')[1]) / 60) + 12; // Convert to 24-hour format
+
+            let totalHours = endHour - startHour;
+            let elapsedHours = hour + (minute / 60) - startHour;
+
+            if (elapsedHours < 0) return 0;
+            if (elapsedHours > totalHours) return 100;
+            return (elapsedHours / totalHours) * 100;
     }
 
     useEffect(() => {
@@ -170,7 +189,9 @@ export default function StoreCards() {
                 
                 <div className="flex justify-between items-center mb-2">
                     <span className="text-lg font-bold text-black">{getTodayTimesAuckland()}</span>
-                    <span className="text-green-600 text-sm font-semibold">Open</span>
+                    {aucklandState === 0 && <span className="text-red-600 text-sm font-semibold">Closed</span>}
+                    {aucklandState === 2 && <span className="text-orange-600 text-sm font-semibold">Closing Soon</span>}
+                    {aucklandState === 1 && <span className="text-green-600 text-sm font-semibold">Open</span>}
                 </div>
 
                 <div className="mb-4">
@@ -277,7 +298,9 @@ export default function StoreCards() {
                 
                 <div className="flex justify-between items-center mb-2">
                     <span className="text-lg font-bold text-black">{getTodayTimesHamilton()}</span>
-                    <span className="text-red-600 text-sm font-semibold">Closed</span>
+                    {hamiltonState === 0 && <span className="text-red-600 text-sm font-semibold">Closed</span>}
+                    {hamiltonState === 2 && <span className="text-orange-600 text-sm font-semibold">Closing Soon</span>}
+                    {hamiltonState === 1 && <span className="text-green-600 text-sm font-semibold">Open</span>}
                 </div>
 
                 <div className="mb-4">
