@@ -21,7 +21,7 @@ export default function StoreCards() {
         const day = now.getDay();
         if (day === 0) return "Closed";
         else if (day >= 1 && day <= 5) return "9:00 AM - 5:00 PM";
-        else if (day === 7) return "10:00 AM - 5:00 PM";
+        else if (day === 6) return "10:00 AM - 5:00 PM";
     }
 
     const getTodayTimesHamilton = () => {
@@ -42,13 +42,22 @@ export default function StoreCards() {
                 setAucklandState(0);
                 setHamiltonState(0);
             } else if (day === 6) {
-                 if (hour >= 10 && hour < 16) {
+                // Auckland Store
+                if (hour >= 10 && hour < 16) {
                     setAucklandState(1);
                 } else if (hour >= 16 && hour < 17) {
                     setAucklandState(2);
                 } else {
                     setAucklandState(0);
                 }
+                // Hamilton Store
+                if (hour >= 8 && hour < 16) {
+                        setHamiltonState(1);
+                    } else if (hour >= 16 && hour < 17) {
+                        setHamiltonState(2);
+                    } else {
+                        setHamiltonState(0);
+                    }
             } else {
                 // Auckland Store
                 if (hour >= 9 && hour < 16) {
@@ -59,27 +68,17 @@ export default function StoreCards() {
                     setAucklandState(0);
                 }
                 // Hamilton Store
-                if (day === 6) {
-                    if (hour >= 8 && hour < 16) {
+                if (hour >= 9 && hour <= 16) {
+                    if (hour === 16 && minute > 30) {
+                        setHamiltonState(2);
+                    } else {
                         setHamiltonState(1);
-                    } else if (hour >= 16 && hour < 17) {
+                    }
+                } else if (hour >= 17) {
+                    if (hour === 17 && minute < 30) {
                         setHamiltonState(2);
                     } else {
                         setHamiltonState(0);
-                    }
-                } else {
-                    if (hour >= 9 && hour <= 16) {
-                        if (hour === 16 && minute > 30) {
-                            setHamiltonState(2);
-                        } else {
-                            setHamiltonState(1);
-                        }
-                    } else if (hour >= 17) {
-                        if (hour === 17 && minute < 30) {
-                            setHamiltonState(2);
-                        } else {
-                            setHamiltonState(0);
-                        }
                     }
                 }
             }
@@ -101,10 +100,19 @@ export default function StoreCards() {
                 alt="Auckland Store"
                 className="w-full h-full object-cover"
                 />
-                <div className="absolute top-3 right-3 bg-green-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
-                <span className="w-2 h-2 bg-white rounded-full"></span>
-                OPEN NOW
-                </div>
+
+                {aucklandState === 0 && <div className="absolute top-3 right-3 bg-red-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
+                                        <span className="w-2 h-2 bg-white rounded-full"></span>
+                                        CLOSED
+                                        </div>}
+                {aucklandState === 1 && <div className="absolute top-3 right-3 bg-green-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
+                                        <span className="w-2 h-2 bg-white rounded-full"></span>
+                                        OPEN NOW
+                                        </div>}
+                {aucklandState === 2 && <div className="absolute top-3 right-3 bg-orange-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
+                                        <span className="w-2 h-2 bg-white rounded-full"></span>
+                                        CLOSING SOON
+                                        </div>}
             </div>
 
             {/* Store Info */}
@@ -200,10 +208,18 @@ export default function StoreCards() {
                 alt="Hamilton Store"
                 className="w-full h-full object-cover"
                 />
-                <div className="absolute top-3 right-3 bg-red-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
-                <span className="w-2 h-2 bg-white rounded-full"></span>
-                CLOSED
-                </div>
+                {hamiltonState === 0 && <div className="absolute top-3 right-3 bg-red-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
+                                        <span className="w-2 h-2 bg-white rounded-full"></span>
+                                        CLOSED
+                                        </div>}
+                {hamiltonState === 1 && <div className="absolute top-3 right-3 bg-green-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
+                                        <span className="w-2 h-2 bg-white rounded-full"></span>
+                                        OPEN NOW
+                                        </div>}
+                {hamiltonState === 2 && <div className="absolute top-3 right-3 bg-orange-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
+                                        <span className="w-2 h-2 bg-white rounded-full"></span>
+                                        CLOSING SOON
+                                        </div>}
             </div>
 
             {/* Store Info */}
