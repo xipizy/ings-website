@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Navbar from './navbar';
 import { useEffect } from 'react';
 import { MapPin, Phone, Navigation, Share2, ChevronDown, Clock } from 'lucide-react';
+import aucklandStore1 from '../assets/aucklandStore1.png';
+import hamiltonStore1 from '../assets/hamiltonStore1.png';
 
 export default function StoreCards() {
     const [showAllHours1, setShowAllHours1] = useState(false);
@@ -30,6 +32,41 @@ export default function StoreCards() {
         if (day === 0) return "Closed";
         else if (day >= 1 && day <= 5) return "9:00 AM - 5:30 PM";
         else if (day === 6) return "8:00 AM - 5:00 PM";
+    }
+
+    const getProgressPercentage = (storeName) => {
+        const now = new Date();
+        const day = now.getDay();
+        const hour = now.getHours();
+        const minute = now.getMinutes();
+
+        if (storeName === 'Auckland') {
+            // Get starting hour based on day
+            let hourString = getTodayTimesAuckland();
+            let [startTime, endTime] = hourString.split(' - ');
+            let startHour = parseInt(startTime.split(':')[0]);
+            let endHour = parseInt(endTime.split(':')[0]) + 12; // Convert to 24-hour format
+
+            let totalHours = endHour - startHour;
+            let elapsedHours = hour + (minute / 60) - startHour;
+
+            if (elapsedHours < 0) return 0;
+            if (elapsedHours > totalHours) return 100;
+            return (elapsedHours / totalHours) * 100;
+        } else {
+            // Get starting hour based on day
+            let hourString = getTodayTimesHamilton();
+            let [startTime, endTime] = hourString.split(' - ');
+            let startHour = parseInt(startTime.split(':')[0]);
+            let endHour = parseInt(endTime.split(':')[0]) + (parseInt(endTime.split(':')[1]) / 60) + 12; // Convert to 24-hour format
+
+            let totalHours = endHour - startHour;
+            let elapsedHours = hour + (minute / 60) - startHour;
+
+            if (elapsedHours < 0) return 0;
+            if (elapsedHours > totalHours) return 100;
+            return (elapsedHours / totalHours) * 100;
+        }   
     }
 
     useEffect(() => {
@@ -96,7 +133,7 @@ export default function StoreCards() {
             {/* Store Image */}
             <div className="relative h-40">
                 <img 
-                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=300&fit=crop" 
+                src={aucklandStore1} 
                 alt="Auckland Store"
                 className="w-full h-full object-cover"
                 />
@@ -138,7 +175,7 @@ export default function StoreCards() {
 
                 <div className="mb-4">
                     <div className="w-full bg-green-100 rounded-full h-1.5">
-                    <div className="bg-green-500 h-1.5 rounded-full" style={{ width: '65%' }}></div>
+                    <div className={`${aucklandState === 1 && 'bg-green-500'} ${aucklandState === 0 && 'bg-red-500'} ${aucklandState === 2 && 'bg-orange-500'} h-1.5 rounded-full`} style={{ width: `${getProgressPercentage("Auckland")}%` }}></div>
                     </div>
                     <p className="text-xs text-gray-600 mt-1">Closes in 5 hours 23 mins</p>
                 </div>
@@ -199,12 +236,12 @@ export default function StoreCards() {
             </div>
             </div>
 
-            {/* Westside Store */}
+            {/* Hamilton Store */}
             <div className="bg-white rounded-2xl shadow-md overflow-hidden">
             {/* Store Image */}
             <div className="relative h-40">
                 <img 
-                src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=300&fit=crop" 
+                src={hamiltonStore1} 
                 alt="Hamilton Store"
                 className="w-full h-full object-cover"
                 />
@@ -245,7 +282,7 @@ export default function StoreCards() {
 
                 <div className="mb-4">
                     <div className="w-full bg-green-100 rounded-full h-1.5">
-                    <div className="bg-green-500 h-1.5 rounded-full" style={{ width: '65%' }}></div>
+                    <div className={` ${hamiltonState === 1 && 'bg-green-500'} ${hamiltonState === 0 && 'bg-red-500'} ${hamiltonState === 2 && 'bg-orange-500'} h-1.5 rounded-full`} style={{ width: `${getProgressPercentage("Hamilton")}%` }}></div>
                     </div>
                     <p className="text-xs text-gray-600 mt-1">Closed</p>
                 </div>
