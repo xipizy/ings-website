@@ -39,6 +39,8 @@ export default function StoreCards() {
         const day = now.getDay();
         const hour = now.getHours();
         const minute = now.getMinutes();
+        
+        if (day === 0) return 100;
 
         let hourString = "";
         if (storeName === 'Auckland') {
@@ -67,6 +69,8 @@ export default function StoreCards() {
         const hour = now.getHours();
         const minute = now.getMinutes();
 
+        if (day === 0) return "Closed";
+        
         let hourString = "";
         if (storeName === 'Auckland') {
             // Get starting hour based on day
@@ -81,11 +85,13 @@ export default function StoreCards() {
             let endHour = parseInt(endTime.split(':')[0]) + (parseInt(endTime.split(':')[1]) / 60) + 12; // Convert to 24-hour format
 
             let totalHours = endHour - startHour;
-            let elapsedHours = hour + (minute / 60) - startHour;
+            let hoursToClose = endHour - (hour + (minute / 60));
+        
+            if (hoursToClose < 0) return "Closed";
 
-            if (elapsedHours < 0) return 0;
-            if (elapsedHours > totalHours) return 100;
-            return (elapsedHours / totalHours) * 100;
+            // REQUIRES FIXING HERE 
+            if (hoursToClose > totalHours) return "Opens in" + "...";
+            return "Closes in " + Math.floor(hoursToClose) + " hours " + Math.round((hoursToClose % 1) * 60) + " mins";
     }
 
     useEffect(() => {
@@ -198,7 +204,7 @@ export default function StoreCards() {
                     <div className="w-full bg-green-100 rounded-full h-1.5">
                     <div className={`${aucklandState === 1 && 'bg-green-500'} ${aucklandState === 0 && 'bg-red-500'} ${aucklandState === 2 && 'bg-orange-500'} h-1.5 rounded-full`} style={{ width: `${getProgressPercentage("Auckland")}%` }}></div>
                     </div>
-                    <p className="text-xs text-gray-600 mt-1">Closes in 5 hours 23 mins</p>
+                    <p className="text-xs text-gray-600 mt-1">{getTimeToClosing("Auckland")}</p>
                 </div>
 
                 {/* View All Hours */}
@@ -307,7 +313,7 @@ export default function StoreCards() {
                     <div className="w-full bg-green-100 rounded-full h-1.5">
                     <div className={` ${hamiltonState === 1 && 'bg-green-500'} ${hamiltonState === 0 && 'bg-red-500'} ${hamiltonState === 2 && 'bg-orange-500'} h-1.5 rounded-full`} style={{ width: `${getProgressPercentage("Hamilton")}%` }}></div>
                     </div>
-                    <p className="text-xs text-gray-600 mt-1">Closed</p>
+                    <p className="text-xs text-gray-600 mt-1">{getTimeToClosing("Hamilton")}</p>
                 </div>
 
                 {/* View All Hours */}
