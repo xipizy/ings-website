@@ -8,6 +8,8 @@ import hamiltonStore1 from '../assets/hamiltonStore1.png';
 export default function StoreCards() {
     const [showAllHours1, setShowAllHours1] = useState(false);
     const [showAllHours2, setShowAllHours2] = useState(false);
+    const [call1, setCall1] = useState(false);
+    const [call2, setCall2] = useState(false);
 
     const [aucklandState, setAucklandState] = useState(0);
     const [hamiltonState, setHamiltonState] = useState(0);
@@ -352,17 +354,17 @@ export default function StoreCards() {
 
                 {/* Action Buttons */}
                 <div className="grid grid-cols-2 gap-3 mt-5 pt-4 border-t">
-                <button className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded">
+                <button onClick={() => setCall1(!call1)} className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded">
                     <Phone className="w-5 h-5" />
                     <span className="text-xs font-medium">Call</span>
                 </button>
-                <button className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded">
+                <button onClick={() => setCall2(!call2)} className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded">
                     <Share2 className="w-5 h-5" />
                     <span className="text-xs font-medium">Share</span>
                 </button>
                 </div>
             </div>
-            </div>
+            </div>  
         </div>
         </div>
     </>
