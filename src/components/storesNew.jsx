@@ -210,27 +210,30 @@ export default function StoreCards() {
                     <p className="text-xs text-gray-600 mt-1">{getTimeToClosing("Auckland")}</p>
                 </div>
 
-                {/* View All Hours */}
+                {/* View All Hours - Auckland Store */}
                 <button 
                     onClick={() => setShowAllHours1(!showAllHours1)}
-                    className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
+                    className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
                     <Clock className="w-4 h-4" />
                     <span>View All Hours</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${showAllHours1 ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showAllHours1 ? 'rotate-180' : ''}`} />
                 </button>
 
-                {showAllHours1 && (
-                    <div className="mt-3 space-y-2 text-sm text-black">
-                    <div className="flex justify-between"><span>Monday</span><span>9:00 AM - 5:00 PM</span></div>
-                    <div className="flex justify-between"><span>Tuesday</span><span>9:00 AM - 5:00 PM</span></div>
-                    <div className="flex justify-between"><span>Wednesday</span><span>9:00 AM - 5:00 PM</span></div>
-                    <div className="flex justify-between"><span>Thursday</span><span>9:00 AM - 5:00 PM</span></div>
-                    <div className="flex justify-between"><span>Friday</span><span>9:00 AM - 5:00 PM</span></div>
-                    <div className="flex justify-between"><span>Saturday</span><span>10:00 AM - 5:00 PM</span></div>
-                    <div className="flex justify-between"><span className="text-red-600">Sunday</span><span className="text-red-600">Closed</span></div>
+                <div className={`
+                    transition-all duration-300 ease-in-out overflow-hidden
+                    ${showAllHours1 ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}
+                `}>
+                    <div className="space-y-2 text-sm text-black">
+                        <div className="flex justify-between"><span>Monday</span><span>9:00 AM - 5:00 PM</span></div>
+                        <div className="flex justify-between"><span>Tuesday</span><span>9:00 AM - 5:00 PM</span></div>
+                        <div className="flex justify-between"><span>Wednesday</span><span>9:00 AM - 5:00 PM</span></div>
+                        <div className="flex justify-between"><span>Thursday</span><span>9:00 AM - 5:00 PM</span></div>
+                        <div className="flex justify-between"><span>Friday</span><span>9:00 AM - 5:00 PM</span></div>
+                        <div className="flex justify-between"><span>Saturday</span><span>10:00 AM - 5:00 PM</span></div>
+                        <div className="flex justify-between"><span className="text-red-600">Sunday</span><span className="text-red-600">Closed</span></div>
                     </div>
-                )}
+                </div>
                 </div>
 
                 {/* Map */}
@@ -248,15 +251,12 @@ export default function StoreCards() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="grid grid-cols-2 gap-3 mt-5 pt-4 border-t">
-                <button className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded">
+                <div className="grid grid-cols-1 gap-3 mt-5 pt-4 border-t">
+                <button onClick={() => setCall1(!call1)} className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded transition duration-150">
                     <Phone className="w-5 h-5" />
                     <span className="text-xs font-medium">Call</span>
                 </button>
-                <button className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded">
-                    <Share2 className="w-5 h-5" />
-                    <span className="text-xs font-medium">Share</span>
-                </button>
+                    {call1 && <p className="text-black text-center">Phone: (07) 848 1668</p>}
                 </div>
 
             </div>
@@ -315,27 +315,30 @@ export default function StoreCards() {
                     <p className="text-xs text-gray-600 mt-1">{getTimeToClosing("Hamilton")}</p>
                 </div>
 
-                {/* View All Hours */}
+                {/* View All Hours - Hamilton Store */}
                 <button 
                     onClick={() => setShowAllHours2(!showAllHours2)}
-                    className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
+                    className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
                     <Clock className="w-4 h-4" />
                     <span>View All Hours</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${showAllHours2 ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showAllHours2 ? 'rotate-180' : ''}`} />
                 </button>
 
-                {showAllHours2 && (
-                    <div className="mt-3 space-y-2 text-sm text-black">
-                    <div className="flex justify-between"><span>Monday</span><span>9:00 AM - 5:30 PM</span></div>
-                    <div className="flex justify-between"><span>Tuesday</span><span>9:00 AM - 5:30 PM</span></div>
-                    <div className="flex justify-between"><span>Wednesday</span><span>9:00 AM - 5:30 PM</span></div>
-                    <div className="flex justify-between"><span>Thursday</span><span>9:00 AM - 5:30 PM</span></div>
-                    <div className="flex justify-between"><span>Friday</span><span>9:00 AM - 5:30 PM</span></div>
-                    <div className="flex justify-between"><span>Saturday</span><span>8:00 AM - 5:00 PM</span></div>
-                    <div className="flex justify-between"><span className="text-red-600">Sunday</span><span className="text-red-600">Closed</span></div>
+                <div className={`
+                    transition-all duration-300 ease-in-out overflow-hidden
+                    ${showAllHours2 ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}
+                `}>
+                    <div className="space-y-2 text-sm text-black">
+                        <div className="flex justify-between"><span>Monday</span><span>9:00 AM - 5:30 PM</span></div>
+                        <div className="flex justify-between"><span>Tuesday</span><span>9:00 AM - 5:30 PM</span></div>
+                        <div className="flex justify-between"><span>Wednesday</span><span>9:00 AM - 5:30 PM</span></div>
+                        <div className="flex justify-between"><span>Thursday</span><span>9:00 AM - 5:30 PM</span></div>
+                        <div className="flex justify-between"><span>Friday</span><span>9:00 AM - 5:30 PM</span></div>
+                        <div className="flex justify-between"><span>Saturday</span><span>8:00 AM - 5:00 PM</span></div>
+                        <div className="flex justify-between"><span className="text-red-600">Sunday</span><span className="text-red-600">Closed</span></div>
                     </div>
-                )}
+                </div>
                 </div>
 
                 {/* Map */}
@@ -353,15 +356,12 @@ export default function StoreCards() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="grid grid-cols-2 gap-3 mt-5 pt-4 border-t">
-                <button onClick={() => setCall1(!call1)} className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded">
+                <div className="grid grid-cols-1 gap-3 mt-5 pt-4 border-t">
+                <button onClick={() => setCall2(!call2)} className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded transition duration-150">
                     <Phone className="w-5 h-5" />
                     <span className="text-xs font-medium">Call</span>
                 </button>
-                <button onClick={() => setCall2(!call2)} className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded">
-                    <Share2 className="w-5 h-5" />
-                    <span className="text-xs font-medium">Share</span>
-                </button>
+                    {call2 && <p className='text-black text-center'>Phone: (07) 848 1668</p>}
                 </div>
             </div>
             </div>  
