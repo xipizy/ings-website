@@ -156,7 +156,7 @@ export default function StoreCards() {
         <div className="min-h-max bg-gray-200 p-6">
         <h2 className="text-5xl font-bold text-center mb-8 text-black">Our Store Locations</h2>
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
-            {/* Downtown Store */}
+            {/* Auckland Store */}
             <div className="bg-white rounded-2xl shadow-md overflow-hidden">
             {/* Store Image */}
             <div className="relative h-40">
@@ -167,15 +167,15 @@ export default function StoreCards() {
                 />
 
                 {aucklandState === 0 && <div className="absolute top-3 right-3 bg-red-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
-                                        <span className="w-2 h-2 bg-white rounded-full"></span>
+                                        <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                                         CLOSED
                                         </div>}
                 {aucklandState === 1 && <div className="absolute top-3 right-3 bg-green-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
-                                        <span className="w-2 h-2 bg-white rounded-full"></span>
+                                        <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                                         OPEN NOW
                                         </div>}
                 {aucklandState === 2 && <div className="absolute top-3 right-3 bg-orange-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
-                                        <span className="w-2 h-2 bg-white rounded-full"></span>
+                                        <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                                         CLOSING SOON
                                         </div>}
             </div>
@@ -251,12 +251,17 @@ export default function StoreCards() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="grid grid-cols-1 gap-3 mt-5 pt-4 border-t">
+                <div className="grid grid-cols-1 mt-5 pt-4 border-t">
                 <button onClick={() => setCall1(!call1)} className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded transition duration-150">
                     <Phone className="w-5 h-5" />
                     <span className="text-xs font-medium">Call</span>
                 </button>
-                    {call1 && <p className="text-black text-center">Phone: (07) 848 1668</p>}
+                    <div className={`
+                        transition-all duration-400 ease-in-out overflow-hidden
+                        ${call1 ? 'max-h-20 opacity-100 mt-2' : 'max-h-0 opacity-0'}
+                    `}>
+                        <p className="text-black text-center">Phone: (09) 276 2701</p>
+                    </div>
                 </div>
 
             </div>
@@ -272,15 +277,15 @@ export default function StoreCards() {
                 className="w-full h-full object-cover"
                 />
                 {hamiltonState === 0 && <div className="absolute top-3 right-3 bg-red-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
-                                        <span className="w-2 h-2 bg-white rounded-full"></span>
+                                        <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                                         CLOSED
                                         </div>}
                 {hamiltonState === 1 && <div className="absolute top-3 right-3 bg-green-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
-                                        <span className="w-2 h-2 bg-white rounded-full"></span>
+                                        <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                                         OPEN NOW
                                         </div>}
                 {hamiltonState === 2 && <div className="absolute top-3 right-3 bg-orange-500 text-white px-4 py-1.5 rounded-full font-bold text-xs flex items-center gap-1">
-                                        <span className="w-2 h-2 bg-white rounded-full"></span>
+                                        <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                                         CLOSING SOON
                                         </div>}
             </div>
@@ -356,12 +361,17 @@ export default function StoreCards() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="grid grid-cols-1 gap-3 mt-5 pt-4 border-t">
+                <div className="grid grid-cols-1 mt-5 pt-4 border-t">
                 <button onClick={() => setCall2(!call2)} className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded transition duration-150">
                     <Phone className="w-5 h-5" />
                     <span className="text-xs font-medium">Call</span>
                 </button>
-                    {call2 && <p className='text-black text-center'>Phone: (07) 848 1668</p>}
+                    <div className={`
+                        transition-all duration-400 ease-in-out overflow-hidden
+                        ${call2 ? 'max-h-20 opacity-100 mt-2' : 'max-h-0 opacity-0'}
+                    `}>
+                        <p className="text-black text-center">Phone: (07) 849 1668</p>
+                    </div>
                 </div>
             </div>
             </div>  
