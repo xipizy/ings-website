@@ -89,7 +89,6 @@ export default function StoreCards() {
         
             if (hoursToClose < 0) return "Closed";
 
-            // REQUIRES FIXING HERE 
             if (hoursToClose > totalHours) return "Opens in " + Math.floor(hoursToClose - totalHours) + " hours " + Math.round(((hoursToClose - totalHours) % 1) * 60) + " mins";
 
             return "Closes in " + Math.floor(hoursToClose) + " hours " + Math.round((hoursToClose % 1) * 60) + " mins";
