@@ -90,7 +90,8 @@ export default function StoreCards() {
             if (hoursToClose < 0) return "Closed";
 
             // REQUIRES FIXING HERE 
-            if (hoursToClose > totalHours) return "Opens in" + "...";
+            if (hoursToClose > totalHours) return "Opens in " + Math.floor(hoursToClose - totalHours) + " hours " + Math.round(((hoursToClose - totalHours) % 1) * 60) + " mins";
+
             return "Closes in " + Math.floor(hoursToClose) + " hours " + Math.round((hoursToClose % 1) * 60) + " mins";
     }
 
@@ -152,6 +153,7 @@ export default function StoreCards() {
             <Navbar/> 
         </nav>
         <div className="min-h-max bg-gray-200 p-6">
+        <h2 className="text-5xl font-bold text-center mb-8 text-black">Our Store Locations</h2>
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
             {/* Downtown Store */}
             <div className="bg-white rounded-2xl shadow-md overflow-hidden">
@@ -245,14 +247,10 @@ export default function StoreCards() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="grid grid-cols-3 gap-3 mt-5 pt-4 border-t">
+                <div className="grid grid-cols-2 gap-3 mt-5 pt-4 border-t">
                 <button className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded">
                     <Phone className="w-5 h-5" />
                     <span className="text-xs font-medium">Call</span>
-                </button>
-                <button className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded">
-                    <Navigation className="w-5 h-5" />
-                    <span className="text-xs font-medium">Directions</span>
                 </button>
                 <button className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded">
                     <Share2 className="w-5 h-5" />
@@ -354,14 +352,10 @@ export default function StoreCards() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="grid grid-cols-3 gap-3 mt-5 pt-4 border-t">
+                <div className="grid grid-cols-2 gap-3 mt-5 pt-4 border-t">
                 <button className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded">
                     <Phone className="w-5 h-5" />
                     <span className="text-xs font-medium">Call</span>
-                </button>
-                <button className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded">
-                    <Navigation className="w-5 h-5" />
-                    <span className="text-xs font-medium">Directions</span>
                 </button>
                 <button className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded">
                     <Share2 className="w-5 h-5" />
