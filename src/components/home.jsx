@@ -4,6 +4,8 @@ import wholesaleIcon from '../assets/wholesale.png';
 import checkIcon from '../assets/check.png';
 import mainImage from '../assets/main.png';
 import { useEffect } from 'react';
+import Footer from './footer';
+
 
 function Home() {
 
@@ -108,6 +110,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   )
 }

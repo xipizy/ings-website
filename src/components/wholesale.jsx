@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Package, DollarSign, Users } from 'lucide-react';
 import {useRef} from 'react';
 import Navbar from './navbar'
+import Footer from './footer';
 
 export default function WholesaleInquiry() {
   const [formData, setFormData] = useState({
@@ -162,6 +163,7 @@ export default function WholesaleInquiry() {
             </p>
             </div>
         </div>
+        <Footer/>
     </>
   );
 }

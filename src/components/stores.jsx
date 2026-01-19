@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import Navbar from './navbar';
 import { useEffect } from 'react';
-import { MapPin, Phone, Navigation, Share2, ChevronDown, Clock } from 'lucide-react';
+import { MapPin, Phone, ChevronDown, Clock } from 'lucide-react';
 import aucklandStore1 from '../assets/aucklandStore1.png';
 import hamiltonStore1 from '../assets/hamiltonStore1.png';
+import Footer from './footer';
 
 export default function Store() {
     const [showAllHours1, setShowAllHours1] = useState(false);
@@ -386,6 +387,7 @@ export default function Store() {
             </div>  
         </div>
         </div>
+        <Footer/>
     </>
   );
 }
