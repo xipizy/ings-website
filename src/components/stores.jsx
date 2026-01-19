@@ -5,6 +5,7 @@ import { MapPin, Phone, ChevronDown, Clock } from 'lucide-react';
 import aucklandStore1 from '../assets/aucklandStore1.png';
 import hamiltonStore1 from '../assets/hamiltonStore1.png';
 import Footer from './footer';
+import ContactForm from './contactForm';
 
 export default function Store() {
     const [showAllHours1, setShowAllHours1] = useState(false);
@@ -392,6 +393,12 @@ export default function Store() {
             </div>
             </div>  
         </div>
+        </div>
+        {/* Form Section */}
+        <div className="max-w-2xl mx-auto mt-5 mb-10">
+            <h2 className="text-5xl font-bold text-center mb-8 text-black">Send Us a Message</h2>
+            <p className="text-center mb-8 text-lg text-black">Got a question? Fill out the form below and we'll get back to you as soon as possible.</p>
+            <ContactForm/>
         </div>
         <Footer/>
     </>

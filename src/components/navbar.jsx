@@ -8,10 +8,6 @@ function handleClickHome() {
   window.location.href = '/#slide1';
 }
 
-function handleClickContact() {
-  window.location.href = '/contact';
-}
-
 function handleClickWholesale() {
   window.location.href = '/wholesale';
 }
@@ -43,9 +39,6 @@ export default function Navbar() {
             </button>
             <button onClick={handleClickWholesale} className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
               Wholesale Inquiries
-            </button>
-            <button onClick={handleClickContact} className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
-              Contact Us
             </button>
           </nav>
         </div>
