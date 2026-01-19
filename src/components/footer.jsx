@@ -32,11 +32,6 @@ export default function Footer() {
                   Wholesale Inquiries
                 </a>
               </li>
-              <li>
-                <a href="/contact" className="text-gray-400 text-sm hover:text-white transition-colors">
-                  Contact
-                </a>
-              </li>
             </ul>
           </div>
 
