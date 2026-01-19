@@ -153,8 +153,17 @@ export default function Store() {
         <nav className="sticky top-0 z-2">
             <Navbar/> 
         </nav>
+           <section className="bg-gradient-to-r from-indigo-600 via-purple-600 to-purple-700 py-16 px-6 text-center text-white">
+            <div className="max-w-4xl mx-auto">
+                <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                Get in Touch
+                </h1>
+                <p className="text-base md:text-lg leading-relaxed opacity-90">
+                We'd love to hear from you. Visit us at either of our locations or reach out through the contact details below.
+                </p>
+            </div>
+            </section>
         <div className="min-h-max bg-gray-200 p-6">
-        <h2 className="text-5xl font-bold text-center mb-8 text-black">Our Store Locations</h2>
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
             {/* Auckland Store */}
             <div className="bg-white rounded-2xl shadow-md overflow-hidden">
@@ -254,7 +263,7 @@ export default function Store() {
                 <div className="grid grid-cols-1 mt-5 pt-4 border-t">
                 <button onClick={() => setCall1(!call1)} className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded transition duration-150">
                     <Phone className="w-5 h-5" />
-                    <span className="text-xs font-medium">Call</span>
+                    <span className="text-xs font-medium">Contact Details</span>
                 </button>
                     <div className={`
                         transition-all duration-400 ease-in-out overflow-hidden
