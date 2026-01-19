@@ -5,6 +5,7 @@ import checkIcon from '../assets/check.png';
 import mainImage from '../assets/main.png';
 import { useEffect } from 'react';
 import Footer from './footer';
+import { Truck, ShieldCheck, Headphones } from 'lucide-react';
 
 
 function Home() {
@@ -65,7 +66,55 @@ function Home() {
           <h2 className="text-black text-2xl font-semibold p-4 text-center">Quality Guaranteed</h2>
         </div>
       </div>
+      
+      {/* Features */}
+      <section className="py-16 px-6 bg-gray-50 h-[50vh]">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-3">Why Choose Us</h2>
+            <p className="text-gray-600 text-lg">
+              Experience the difference with our premium retail services
+            </p>
+          </div>
 
+          {/* Features Grid */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Fast Delivery */}
+            <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-blue-500 rounded-xl w-16 h-16 flex items-center justify-center mb-6">
+                <Truck className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Fast and FREE delivery</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Customers in Hamilton enjoy free delivery on orders over $100 (Businessness no minimum), while Auckland customers benefit from free delivery on orders over $150.
+              </p>
+            </div>
+
+            {/* Quality Guaranteed */}
+            <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-purple-500 rounded-xl w-16 h-16 flex items-center justify-center mb-6">
+                <ShieldCheck className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Quality Guaranteed</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Every product is carefully selected and quality-checked to meet our high standards.
+              </p>
+            </div>
+
+            {/* 24/7 Support */}
+            <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-green-500 rounded-xl w-16 h-16 flex items-center justify-center mb-6">
+                <Headphones className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">24/7 Support</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Our dedicated team is always ready to help you with any questions or concerns.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* News */}
       <div className="w-full h-[15vh] bg-linear-to-b from-white to-gray-800"></div>
       <div className="w-full h-[80vh] bg-gray-800 flex flex-col items-center drop-shadow-2xl">
