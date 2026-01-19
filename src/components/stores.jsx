@@ -154,16 +154,22 @@ export default function Store() {
         <nav className="sticky top-0 z-2">
             <Navbar/> 
         </nav>
-           <section className="bg-gradient-to-r from-indigo-600 via-purple-600 to-purple-700 py-16 px-6 text-center text-white">
-            <div className="max-w-4xl mx-auto">
-                <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                Get in Touch
-                </h1>
-                <p className="text-base md:text-lg leading-relaxed opacity-90">
-                We'd love to hear from you. Visit us at either of our locations or reach out through the contact details below.
+           {/* Hero Section */}
+            <div 
+                className="relative h-200 bg-cover bg-center flex items-center justify-center"
+                style={{
+                backgroundImage: 'url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200")',
+                backgroundBlendMode: 'overlay',
+                backgroundColor: 'rgba(0,0,0,0.6)'
+                }}
+            >
+                <div className="text-center text-white z-1">
+                <h1 className="text-7xl font-bold mb-6">Get in Touch</h1>
+                <p className="text-base md:text-2xl leading-relaxed opacity-90">
+                    We'd love to hear from you. Visit us at either of our locations or reach out through the contact details below.
                 </p>
+                </div>
             </div>
-            </section>
         <div className="min-h-max bg-gray-200 p-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
             {/* Auckland Store */}

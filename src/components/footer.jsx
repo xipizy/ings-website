@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* RetailHub Section */}
           <div>
-            <h3 className="text-xl font-bold mb-3">ING'S TRADING LTD</h3>
+            <h3 className="text-xl font-bold mb-3">ING'S TRADING LTD.</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Your trusted retail partner across New Zealand.
             </p>
@@ -45,13 +45,23 @@ export default function Footer() {
             <h4 className="text-base font-semibold mb-4">Contact</h4>
             <ul className="space-y-2">
               <li>
-                <a href="tel:+6494401234" className="text-gray-400 text-sm hover:text-white transition-colors">
-                  +64 9 440 1234
+                <a href="mailto:paul@ings.co.nz" className="text-gray-400 text-sm hover:text-white transition-colors">
+                  Auckland : paul@ings.co.nz
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@ingstrading.co.nz" className="text-gray-400 text-sm hover:text-white transition-colors">
-                  hello@ingstrading.co.nz
+                <a href="tel:092762701" className="text-gray-400 text-sm hover:text-white transition-colors">
+                  Auckland : (09) 276 2701
+                </a>
+              </li>
+              <li>
+                <a href="mailto:ingstradingltd@outlook.com" className="text-gray-400 text-sm hover:text-white transition-colors">
+                  Hamilton : ingstradingltd@outlook.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:078481668" className="text-gray-400 text-sm hover:text-white transition-colors">
+                  Hamilton : (07) 848 1668
                 </a>
               </li>
             </ul>
@@ -61,27 +71,6 @@ export default function Footer() {
           <div>
             <h4 className="text-base font-semibold mb-4">Follow Us</h4>
             <div className="flex gap-4">
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </a>
             </div>
           </div>
         </div>
