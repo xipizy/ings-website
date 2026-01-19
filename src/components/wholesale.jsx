@@ -1,41 +1,15 @@
-import { useState } from 'react';
 import { Package, DollarSign, Users } from 'lucide-react';
-import {useRef} from 'react';
-import Navbar from './navbar'
+import Navbar from './navbar';
 import Footer from './footer';
+import ContactForm from './contactForm';
+import { useRef } from 'react';
 
 export default function WholesaleInquiry() {
-  const [formData, setFormData] = useState({
-    name: '',
-    store: 'AKL',
-    email: '',
-    message: ''
-  });
 
   const formRef = useRef(null);
 
-  const scrollToForm = () => {
-    formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = () => {
-    console.log('Form submitted:', formData);
-    alert('Thank you for your inquiry! We will contact you soon.');
-    // Add your form submission logic here
-    // Clear
-    setFormData({
-      name: '',
-      store: 'AKL',
-      email: '',
-      message: ''
-    });
+  const scrollToForm = () => {    
+    formRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -106,56 +80,7 @@ export default function WholesaleInquiry() {
             {/* Form Section */}
             <div ref={formRef} className="max-w-2xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-8 text-black">Wholesale Inquiry Form</h2>
-            
-            <div className="space-y-4">
-                <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                value={formData.name}
-                onChange={handleChange}
-                className="text-black w-full px-6 py-4 bg-gray-300 rounded text-lg placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-
-                <select
-                name="store"
-                placeholder="Which Store HAM/AKL"
-                value={formData.store}
-                onChange={handleChange}
-                className="text-black w-full px-6 py-4 bg-gray-300 rounded text-lg placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
-                >
-                    <option value="AKL">Auckland Store</option>
-                    <option value="HAM">Hamilton Store</option>
-                </select>
-
-                <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={handleChange}
-                className="text-black w-full px-6 py-4 bg-gray-300 rounded text-lg placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-
-                <textarea
-                name="message"
-                placeholder="Message"
-                value={formData.message}
-                onChange={handleChange}
-                rows="4"
-                className="w-full px-6 py-4 bg-gray-300 rounded text-lg placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 resize-none text-black"
-                />
-
-                <div className="text-center">
-                <button
-                    onClick={handleSubmit}
-                    className="bg-red-500 hover:bg-red-600 text-white font-bold px-12 py-4 rounded-full text-xl transition-colors"
-                >
-                    Submit
-                </button>
-                </div>
-            </div>
-
+            <ContactForm/>
             <p className="text-center mt-8 text-lg">
                 <span className="text-red-600 font-semibold">Prefer to speak over the phone? Click </span>
                 <a href="/stores" className="text-blue-600 hover:underline font-semibold">here</a>
