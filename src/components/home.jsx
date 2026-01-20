@@ -3,9 +3,10 @@ import locationIcon from '../assets/location.png';
 import wholesaleIcon from '../assets/wholesale.png';
 import checkIcon from '../assets/check.png';
 import mainImage from '../assets/main.png';
+import Reviews from './reviews';
 import { useEffect } from 'react';
 import Footer from './footer';
-import { Truck, ShieldCheck, Headphones } from 'lucide-react';
+import { Truck, ShieldCheck, Headphones,} from 'lucide-react';
 
 
 function Home() {
@@ -66,7 +67,7 @@ function Home() {
           <h2 className="text-black text-2xl font-semibold p-4 text-center">Quality Guaranteed</h2>
         </div>
       </div>
-      
+
       {/* Features */}
       <section className="py-16 px-6 bg-gray-50 h-[50vh]">
         <div className="max-w-6xl mx-auto">
@@ -115,6 +116,7 @@ function Home() {
           </div>
         </div>
       </section>
+      
       {/* News */}
       <div className="w-full h-[15vh] bg-linear-to-b from-white to-gray-800"></div>
       <div className="w-full h-[80vh] bg-gray-800 flex flex-col items-center drop-shadow-2xl">
@@ -159,6 +161,8 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* Reviews Section */}
+      <Reviews/>
       <Footer/>
     </>
   )
