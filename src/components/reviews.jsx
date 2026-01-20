@@ -1,5 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import { Star} from 'lucide-react';
+import BruceIcon from '../reviewicons/bruceIcon.png';
+import GeorgeIcon from '../reviewicons/georgeIcon.png';
+import SashIcon from '../reviewicons/sashIcon.png'; 
+import MarkIcon from '../reviewicons/markIcon.png';
+import GunaIcon from '../reviewicons/gunaIcon.png';
 
 export default function CustomerTestimonials() {
   const scrollRef = useRef(null);
@@ -7,34 +12,34 @@ export default function CustomerTestimonials() {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Bruce Walker",
       rating: 5,
-      text: "Absolutely fantastic service! The Auckland store has everything I need and the staff are incredibly helpful. Highly recommend!",
-      avatar: "https://i.pravatar.cc/150?img=1"
+      text: "We get what we need for my wife's food truck business, all we have to do is ring and place the order. When we arrive the order is ready to go, the prices are very competitive. Best Asian outlet I've been too.",
+      avatar: BruceIcon
     },
     {
-      name: "Michael Chen",
-      rating: 4,
-      text: "Great quality products and excellent customer service. The Wellington store is my go-to place for shopping.",
-      avatar: "https://i.pravatar.cc/150?img=13"
+      name: "George Garard",
+      rating: 5,
+      text: "Excellent Asian grocery shopping.",
+      avatar: GeorgeIcon
     },
     {
-      name: "Emma Williams",
+      name: "Sashmeeta Prasad",
       rating: 5,
-      text: "The best retail experience I've had in NZ. Wide selection, great prices, and friendly staff. Will definitely be back!",
-      avatar: "https://i.pravatar.cc/150?img=5"
+      text: "Their premix coffees are so nice and better for me than pak n sav or other stores pre mix coffees",
+      avatar: SashIcon
     },
     {
-      name: "David Park",
+      name: "Mark Strongman",
       rating: 5,
-      text: "Outstanding quality and amazing value. The team went above and beyond to help me find exactly what I needed.",
-      avatar: "https://i.pravatar.cc/150?img=8"
+      text: "They have a wide variety of Asian food",
+      avatar: MarkIcon
     },
     {
-      name: "Jessica Taylor",
+      name: "Guna Sekaran Kanniah",
       rating: 5,
-      text: "I'm impressed by the range of products and the personalized service. This is now my favorite store!",
-      avatar: "https://i.pravatar.cc/150?img=9"
+      text: "Good range of products and owners are helpful and friendly and genuine",
+      avatar: GunaIcon
     }
   ];
 
