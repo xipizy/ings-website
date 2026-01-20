@@ -123,6 +123,8 @@ function Home() {
       
       {/* Reviews Section */}
       <Reviews/>
+
+      {/* Footer */}
       <Footer/>
     </>
   )
