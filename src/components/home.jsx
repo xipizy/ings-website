@@ -6,7 +6,8 @@ import mainImage from '../assets/main.png';
 import Reviews from './reviews';
 import { useEffect } from 'react';
 import Footer from './footer';
-import { Truck, ShieldCheck, Headphones,} from 'lucide-react';
+import { Truck, ShieldCheck, Headphones} from 'lucide-react';
+import NewsUpdates from './news';
 
 
 function Home() {
@@ -27,7 +28,7 @@ function Home() {
       }
     };
     
-    autoScroll();
+    // autoScroll();
   }, []);
 
   return (
@@ -69,7 +70,7 @@ function Home() {
       </div>
 
       {/* Features */}
-      <section className="py-16 px-6 bg-gray-50 h-[50vh]">
+      <section className="py-16 px-6 bg-gray-150 h-[50vh]">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
@@ -118,49 +119,8 @@ function Home() {
       </section>
       
       {/* News */}
-      <div className="w-full h-[15vh] bg-linear-to-b from-white to-gray-800"></div>
-      <div className="w-full h-[80vh] bg-gray-800 flex flex-col items-center drop-shadow-2xl">
-        <h2 className="text-white text-7xl font-semibold text-center pt-25">Latest News</h2>
-
-        {/* Carousel */}
-        <div className="carousel w-[50%] h-[30vh] mt-10 rounded-2xl drop-shadow-lg">
-          <div id="slide1" className="carousel-item relative w-full">
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
-              className="w-full" />
-            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <a href="#slide4" className="btn btn-circle">❮</a>
-              <a href="#slide2" className="btn btn-circle">❯</a>
-            </div>
-          </div>
-          <div id="slide2" className="carousel-item relative w-full">
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
-              className="w-full" />
-            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <a href="#slide1" className="btn btn-circle">❮</a>
-              <a href="#slide3" className="btn btn-circle">❯</a>
-            </div>
-          </div>
-          <div id="slide3" className="carousel-item relative w-full">
-            <div className="w-full bg-black">
-            </div>
-            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <a href="#slide2" className="btn btn-circle">❮</a>
-              <a href="#slide4" className="btn btn-circle">❯</a>
-            </div>
-          </div>
-          <div id="slide4" className="carousel-item relative w-full">
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
-              className="w-full" />
-            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <a href="#slide3" className="btn btn-circle">❮</a>
-              <a href="#slide1" className="btn btn-circle">❯</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <NewsUpdates/>
+      
       {/* Reviews Section */}
       <Reviews/>
       <Footer/>
