@@ -32,6 +32,11 @@ export default function Footer() {
                   Wholesale Inquiries
                 </a>
               </li>
+              <li>
+                <a href="/aboutus" className="text-gray-400 text-sm hover:text-white transition-colors">
+                  About Us
+                </a>
+              </li>
             </ul>
           </div>
 
