@@ -4,12 +4,12 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* RetailHub Section */}
           <div>
             <h3 className="text-xl font-bold mb-3">ING'S TRADING LTD.</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Your trusted retail partner across New Zealand.
+              Your trusted asian goods retail partner across New Zealand.
             </p>
           </div>
 
@@ -65,13 +65,6 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
-
-          {/* Follow Us */}
-          <div>
-            <h4 className="text-base font-semibold mb-4">Follow Us</h4>
-            <div className="flex gap-4">
-            </div>
           </div>
         </div>
 
