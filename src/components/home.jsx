@@ -6,7 +6,7 @@ import mainImage from '../assets/main.png';
 import Reviews from './reviews';
 import { useEffect } from 'react';
 import Footer from './footer';
-import { Truck, ShieldCheck, Headphones} from 'lucide-react';
+import { DollarSign, Package , HeartHandshake} from 'lucide-react';
 import NewsUpdates from './news';
 
 
@@ -84,34 +84,34 @@ function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Fast Delivery */}
             <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-blue-500 rounded-xl w-16 h-16 flex items-center justify-center mb-6">
-                <Truck className="w-8 h-8 text-white" />
+              <div className="bg-red-500 rounded-xl w-16 h-16 flex items-center justify-center mb-6">
+                <DollarSign className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Fast and FREE delivery</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Competitive Pricing</h3>
               <p className="text-gray-600 leading-relaxed">
-                Customers in Hamilton enjoy free delivery on orders over $100 (Businessness no minimum), while Auckland customers benefit from free delivery on orders over $150.
+                We provide authentic Asian food and packaging products at competitive prices, giving your business reliable quality without breaking the budget. Consistent, affordable, and trusted by our customers.
               </p>
             </div>
 
             {/* Quality Guaranteed */}
             <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-purple-500 rounded-xl w-16 h-16 flex items-center justify-center mb-6">
-                <ShieldCheck className="w-8 h-8 text-white" />
+              <div className="bg-red-500 rounded-xl w-16 h-16 flex items-center justify-center mb-6">
+                <Package  className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Quality Guaranteed</h3>
               <p className="text-gray-600 leading-relaxed">
-                Every product is carefully quality-checked to meet our high standards.
+                Our products are carefully selected and imported from trusted suppliers, ensuring authenticity, safety, and consistent high standards. You can trust that every item we offer delivers the best to you.
               </p>
             </div>
 
-            {/* 24/7 Support */}
+            {/* Customer Service */}
             <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-green-500 rounded-xl w-16 h-16 flex items-center justify-center mb-6">
-                <Headphones className="w-8 h-8 text-white" />
+              <div className="bg-red-500 rounded-xl w-16 h-16 flex items-center justify-center mb-6">
+                <HeartHandshake className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">24/7 Support</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Customer Experience & Service</h3>
               <p className="text-gray-600 leading-relaxed">
-                Our dedicated team is always ready to help you with any questions or concerns.
+                Our customers come first. Our knowledgeable team is always happy to help you find exactly what you need, offering personalized guidance to ensure a smooth and enjoyable shopping experience.
               </p>
             </div>
           </div>
