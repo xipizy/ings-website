@@ -29,7 +29,7 @@ export default function WholesaleInquiry() {
             <div className="text-center text-white z-1">
             <h1 className="text-7xl font-bold mb-6">Partner With Us</h1>
             <button onClick={scrollToForm} className="bg-red-500 hover:bg-red-600 text-white font-bold px-8 py-4 rounded-full text-xl transition-colors cursor-pointer">
-                Start Your Inquiry
+                Start Your Enquiry
             </button>
             </div>
         </div>
@@ -79,7 +79,7 @@ export default function WholesaleInquiry() {
 
             {/* Form Section */}
             <div ref={formRef} className="max-w-2xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-8 text-black">Wholesale Inquiry Form</h2>
+            <h2 className="text-4xl font-bold text-center mb-8 text-black">Wholesale Contact</h2>
             <ContactForm/>
             <p className="text-center mt-8 text-lg">
                 <span className="text-red-600 font-semibold">Prefer to speak over the phone? Click </span>

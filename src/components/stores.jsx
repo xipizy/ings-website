@@ -278,6 +278,7 @@ export default function Store() {
                         ${call1 ? 'max-h-20 opacity-100 mt-2' : 'max-h-0 opacity-0'}
                     `}>
                         <p className="text-black text-center">Phone: (09) 276 2701</p>
+                        <p className="text-black text-center">Email: paul@ings.co.nz</p>
                     </div>
                 </div>
 
@@ -381,25 +382,26 @@ export default function Store() {
                 <div className="grid grid-cols-1 mt-5 pt-4 border-t">
                 <button onClick={() => setCall2(!call2)} className="flex flex-col items-center gap-1 text-blue-600 hover:bg-blue-50 py-2 rounded transition duration-150">
                     <Phone className="w-5 h-5" />
-                    <span className="text-xs font-medium">Call</span>
+                    <span className="text-xs font-medium">Contact Details</span>
                 </button>
                     <div className={`
                         transition-all duration-400 ease-in-out overflow-hidden
                         ${call2 ? 'max-h-20 opacity-100 mt-2' : 'max-h-0 opacity-0'}
                     `}>
                         <p className="text-black text-center">Phone: (07) 849 1668</p>
+                        <p className="text-black text-center">Email: ingstradingltd@outlook.com</p>
                     </div>
                 </div>
             </div>
             </div>  
         </div>
         </div>
-        {/* Form Section */}
+        {/* Form Section
         <div className="max-w-2xl mx-auto mt-5 mb-10">
             <h2 className="text-5xl font-bold text-center mb-8 text-black">Send Us a Message</h2>
             <p className="text-center mb-8 text-lg text-black">Got a question? Fill out the form below and we'll get back to you as soon as possible.</p>
             <ContactForm/>
-        </div>
+        </div> */}
         <Footer/>
     </>
   );
