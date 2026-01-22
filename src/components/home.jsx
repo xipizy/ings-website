@@ -100,7 +100,7 @@ function Home() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Quality Guaranteed</h3>
               <p className="text-gray-600 leading-relaxed">
-                Every product is carefully selected and quality-checked to meet our high standards.
+                Every product is carefully quality-checked to meet our high standards.
               </p>
             </div>
 

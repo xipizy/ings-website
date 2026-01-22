@@ -1,4 +1,7 @@
-import { Calendar, ArrowRight } from 'lucide-react';
+import {Calendar} from 'lucide-react';
+import ChristmasImage from '../news/christmas.jpg';
+import NewYearImage from '../news/newYear.jpg';
+import AnniversaryImage from '../news/northlandAnniversary.jpg';
 
 const NewsCard = ({ image, date, title, description, badge }) => (
   <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -28,23 +31,23 @@ const NewsCard = ({ image, date, title, description, badge }) => (
 export default function NewsUpdates() {
   const newsItems = [
     {
-      image: "https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800&q=80",
-      date: "January 1, 2026",
-      title: "New Year Store Hours",
-      description: "We will be closed on January 1st and 2nd. Wishing everyone a happy and prosperous year ahead!",
+      image: AnniversaryImage,
+      date: "January 22, 2026",
+      title: "Northland Anniversary",
+      description: "We will be closed on January 26th for Northland Anniversary. Enjoy the holiday!",
       badge: "LATEST NEWS"
     },
     {
-      image: "https://images.unsplash.com/photo-1512909006721-3d6018887383?w=800&q=80",
+      image: NewYearImage,
+      date: "January 1, 2026",
+      title: "New Year Store Hours",
+      description: "We will be closed on January 1st and 2nd. Wishing everyone a happy and prosperous year ahead!",
+    },
+    {
+      image: ChristmasImage,
       date: "December 26, 2025",
       title: "Christmas Store Hours",
       description: "We will be closed on December 25th and 26th. Wishing everyone a joyful holiday season!"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
-      date: "January 5, 2026",
-      title: "New Collection Launch",
-      description: "Discover our latest collection featuring premium products carefully curated for our valued customers."
     }
   ];
 
