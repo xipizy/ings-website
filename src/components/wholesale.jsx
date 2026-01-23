@@ -11,6 +11,10 @@ export default function WholesaleInquiry() {
   const scrollToForm = () => {    
     formRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+  
+  function handleClickStores() {
+    window.location.href = '/stores';
+  }
 
   return (
     <>
@@ -59,7 +63,7 @@ export default function WholesaleInquiry() {
                 </div>
                 <h3 className="text-2xl font-bold text-red-600 mb-4">Competitive Pricing</h3>
                 <p className="text-gray-700">
-                We offer bulk discounts and direct supplier orders on selected products
+                We offer bulk discounts and direct supplier orders on selected products.
                 </p>
             </div>
 
@@ -72,20 +76,21 @@ export default function WholesaleInquiry() {
                 </div>
                 <h3 className="text-2xl font-bold text-red-600 mb-4">Excellent Service</h3>
                 <p className="text-gray-700">
-                Our friendly team is ready to answer any questions or problems you may have
+                Our friendly team is ready to answer any questions or problems you may have.
                 </p>
             </div>
             </div>
 
             {/* Form Section */}
-            <div ref={formRef} className="max-w-2xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-8 text-black">Wholesale Contact</h2>
-            <ContactForm/>
-            <p className="text-center mt-8 text-lg">
-                <span className="text-red-600 font-semibold">Prefer to speak over the phone? Click </span>
-                <a href="/stores" className="text-blue-600 hover:underline font-semibold">here</a>
-                <span className="text-red-600 font-semibold"> and find your local store</span>
-            </p>
+            <div ref={formRef} className="max-w-2xl mx-auto grid gap-8 grid-cols-1">
+                <h2 className="text-4xl font-bold text-center text-black">Wholesale Contact</h2>
+                <p className="text-gray-600 leading-relaxed text-center">
+                    Ready to take your business to the next level with our wholesale options? Find your local store and reach out to us by phone or email. Our team is here to assist you with any questions you may have. We look forward to partnering with you for all your Asian grocery needs!
+                </p>
+                
+                <button onClick={handleClickStores} className="bg-red-500 hover:bg-red-600 text-white font-bold px-8 py-4 rounded-full text-xl transition-colors cursor-pointer">
+                    Find Your Nearest Store
+                </button>
             </div>
         </div>
         <Footer/>

@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import Navbar from './navbar';
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { MapPin, Phone, ChevronDown, Clock } from 'lucide-react';
 import aucklandStore1 from '../assets/aucklandStore1.png';
 import hamiltonStore1 from '../assets/hamiltonStore1.png';
@@ -8,6 +7,9 @@ import Footer from './footer';
 import ContactForm from './contactForm';
 
 export default function Store() {
+
+    const storesRef = useRef(null);
+
     const [showAllHours1, setShowAllHours1] = useState(false);
     const [showAllHours2, setShowAllHours2] = useState(false);
     const [call1, setCall1] = useState(false);
@@ -17,6 +19,9 @@ export default function Store() {
     const [hamiltonState, setHamiltonState] = useState(0);
     // 0 == Closed, 1 == Open, 2 == Closing Soon
 
+    const scrollToStores = () => {    
+        storesRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
     const getCurrentTime = () => {
         const now = new Date();
         return now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
@@ -155,23 +160,28 @@ export default function Store() {
         <nav className="sticky top-0 z-2">
             <Navbar/> 
         </nav>
-           {/* Hero Section */}
-            <div 
-                className="relative h-200 bg-cover bg-center flex items-center justify-center"
-                style={{
-                backgroundImage: 'url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200")',
-                backgroundBlendMode: 'overlay',
-                backgroundColor: 'rgba(0,0,0,0.6)'
-                }}
-            >
-                <div className="text-center text-white z-1">
-                <h1 className="text-7xl font-bold mb-6">Get in Touch</h1>
+
+        {/* Hero Section */}
+        <div 
+            className="relative h-200 bg-cover bg-center flex items-center justify-center"
+            style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200")',
+            backgroundBlendMode: 'overlay',
+            backgroundColor: 'rgba(0,0,0,0.6)'
+            }}
+        >
+            <div className="text-center text-white z-1">
+                <h1 className="text-7xl font-bold mb-6">Our Locations</h1>
                 <p className="text-base md:text-2xl leading-relaxed opacity-90">
-                    We'd love to hear from you. Visit us at either of our locations or reach out through the contact details below.
+                    Visit us at either of our locations or reach out through the contact details below.
                 </p>
-                </div>
+                <button onClick={scrollToStores} className="bg-red-500 hover:bg-red-600 text-white font-bold px-8 py-4 rounded-full text-xl transition-colors cursor-pointer mt-4">
+                    Go To Stores
+                </button>
             </div>
-        <div className="min-h-max bg-gray-200 p-6">
+        </div>
+
+        <div ref={storesRef} className="min-h-max bg-gray-200 p-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
             {/* Auckland Store */}
             <div className="bg-white rounded-2xl shadow-md overflow-hidden">

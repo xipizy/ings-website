@@ -12,25 +12,6 @@ import NewsUpdates from './news';
 
 function Home() {
 
-  useEffect(() => {
-    
-    const autoScroll = async () => {
-      while (true) {
-        await new Promise(resolve => setTimeout(resolve, 100000));
-        
-        const hash = window.location.hash;
-        let currentSlide = parseInt(hash.slice(6));  
-        currentSlide = (currentSlide % 4) + 1;
-        const link = document.querySelector(`a[href="#slide${currentSlide}"]`);
-        if (link) {
-          link.click();
-        }
-      }
-    };
-    
-    // autoScroll();
-  }, []);
-
   return (
     <>
       <nav className="sticky top-0 z-2">
