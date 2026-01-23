@@ -19,6 +19,28 @@ export default function Store() {
     const [hamiltonState, setHamiltonState] = useState(0);
     // 0 == Closed, 1 == Open, 2 == Closing Soon
 
+    const scheduleDataAuckland = [
+            { day: "Monday", hours: "9:00 AM - 5:00 PM" },
+            { day: "Tuesday", hours: "9:00 AM - 5:00 PM" },
+            { day: "Wednesday", hours: "9:00 AM - 5:00 PM" },
+            { day: "Thursday", hours: "9:00 AM - 5:00 PM" },
+            { day: "Friday", hours: "9:00 AM - 5:00 PM" },
+            { day: "Saturday", hours: "10:00 AM - 5:00 PM" },
+            { day: "Sunday", hours: "Closed", closed: true }
+        ];
+
+    const scheduleDataHamilton = [
+            { day: "Monday", hours: "9:00 AM - 5:30 PM" },
+            { day: "Tuesday", hours: "9:00 AM - 5:30 PM" },
+            { day: "Wednesday", hours: "9:00 AM - 5:30 PM" },
+            { day: "Thursday", hours: "9:00 AM - 5:30 PM" },
+            { day: "Friday", hours: "9:00 AM - 5:30 PM" },
+            { day: "Saturday", hours: "8:00 AM - 5:00 PM" },
+            { day: "Sunday", hours: "Closed", closed: true }
+        ];
+
+    const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+
     const scrollToStores = () => {    
         storesRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
@@ -252,15 +274,23 @@ export default function Store() {
                     ${showAllHours1 ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}
                 `}>
                     <div className="space-y-2 text-sm text-black">
-                        <div className="flex justify-between"><span>Monday</span><span>9:00 AM - 5:00 PM</span></div>
-                        <div className="flex justify-between"><span>Tuesday</span><span>9:00 AM - 5:00 PM</span></div>
-                        <div className="flex justify-between"><span>Wednesday</span><span>9:00 AM - 5:00 PM</span></div>
-                        <div className="flex justify-between"><span>Thursday</span><span>9:00 AM - 5:00 PM</span></div>
-                        <div className="flex justify-between"><span>Friday</span><span>9:00 AM - 5:00 PM</span></div>
-                        <div className="flex justify-between"><span>Saturday</span><span>10:00 AM - 5:00 PM</span></div>
-                        <div className="flex justify-between"><span className="text-red-600">Sunday</span><span className="text-red-600">Closed</span></div>
+                    {scheduleDataAuckland.map((item, index) => (
+                        <div key={index} className="flex justify-between">
+                        <span className={item.closed ? "text-red-600" : " text-black"}>
+                            {item.day}
+                            {/* Green Dot for current day */}
+                            {item.day === currentDay && (
+                            <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse ml-2"></span>
+                            )}
+                        </span>
+                        <span className={item.closed ? "text-red-600" : " text-black"}>
+                            {item.hours}
+                        </span>
+                        </div>
+                    ))}
                     </div>
                 </div>
+                
                 </div>
 
                 {/* Map */}
@@ -363,13 +393,20 @@ export default function Store() {
                     ${showAllHours2 ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}
                 `}>
                     <div className="space-y-2 text-sm text-black">
-                        <div className="flex justify-between"><span>Monday</span><span>9:00 AM - 5:30 PM</span></div>
-                        <div className="flex justify-between"><span>Tuesday</span><span>9:00 AM - 5:30 PM</span></div>
-                        <div className="flex justify-between"><span>Wednesday</span><span>9:00 AM - 5:30 PM</span></div>
-                        <div className="flex justify-between"><span>Thursday</span><span>9:00 AM - 5:30 PM</span></div>
-                        <div className="flex justify-between"><span>Friday</span><span>9:00 AM - 5:30 PM</span></div>
-                        <div className="flex justify-between"><span>Saturday</span><span>8:00 AM - 5:00 PM</span></div>
-                        <div className="flex justify-between"><span className="text-red-600">Sunday</span><span className="text-red-600">Closed</span></div>
+                    {scheduleDataHamilton.map((item, index) => (
+                        <div key={index} className="flex justify-between">
+                        <span className={item.closed ? "text-red-600" : " text-black"}>
+                            {item.day}
+                            {/* Green Dot for current day */}
+                            {item.day === currentDay && (
+                            <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse ml-2"></span>
+                            )}
+                        </span>
+                        <span className={item.closed ? "text-red-600" : " text-black"}>
+                            {item.hours}
+                        </span>
+                        </div>
+                    ))}
                     </div>
                 </div>
                 </div>
