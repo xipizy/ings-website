@@ -2,7 +2,7 @@ import Navbar from "./navbar";
 import Footer from "./footer";
 import oldHamiltonPhoto from '../assets/oldHamilton.png';
 import oldAucklandPhoto from '../assets/oldAuckland.png';
-import newHamiltonPhoto from '../assets/newHamilton.png';
+import newHamiltonPhoto from '../assets/hamiltonStore1.png';
 
 export default function AboutUs() {
     const yearsInBusiness = new Date().getFullYear() - 1992;

@@ -2,7 +2,7 @@ import Navbar from './navbar'
 import locationIcon from '../assets/location.png';
 import wholesaleIcon from '../assets/wholesale.png';
 import checkIcon from '../assets/check.png';
-import mainImage from '../assets/main.png';
+import mainImage from '../assets/hamiltonStore1.png';
 import Reviews from './reviews';
 import { useEffect } from 'react';
 import Footer from './footer';
@@ -18,7 +18,7 @@ function Home() {
         <Navbar/> 
       </nav>
       <div className="w-full bg-black shadow-sm top-0 left-0 right-0 h-[80vh] relative">
-        <img src={mainImage} alt="Main Banner" className="w-full h-full object-cover absolute z-1"/>
+        <img src={mainImage} style={{ opacity: 0.3 }} alt="Main Banner" className="w-full h-full object-cover absolute z-1"/>
         <h1 className="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl md:text-6xl font-bold text-center">
           Your Trusted Source of Asian Goods in New Zealand
         </h1>

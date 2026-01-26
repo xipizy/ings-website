@@ -1,5 +1,5 @@
 import {Calendar} from 'lucide-react';
-import ChristmasImage from '../news/christmas.jpg';
+import WaitangiImage from '../news/waitangi.jpg';
 import NewYearImage from '../news/newYear.jpg';
 import AnniversaryImage from '../news/northlandAnniversary.jpg';
 
@@ -31,23 +31,23 @@ const NewsCard = ({ image, date, title, description, badge }) => (
 export default function NewsUpdates() {
   const newsItems = [
     {
-      image: AnniversaryImage,
-      date: "January 22, 2026",
-      title: "Northland Anniversary",
-      description: "We will be closed on January 26th for Northland Anniversary. Enjoy the holiday!",
+      image: WaitangiImage,
+      date: "27th, January, 2026",
+      title: "Waitangi Day Store Hours",
+      description: "We will be closed on December 25th and 26th. Wishing everyone a joyful holiday season!",
       badge: "LATEST NEWS"
     },
     {
-      image: NewYearImage,
-      date: "January 1, 2026",
-      title: "New Year Store Hours",
-      description: "We will be closed on January 1st and 2nd. Wishing everyone a happy and prosperous year ahead!",
+      image: AnniversaryImage,
+      date: "22nd, January, 2026",
+      title: "Northland Anniversary",
+      description: "We will be closed on January 26th for Northland Anniversary. Enjoy the holiday!",
     },
     {
-      image: ChristmasImage,
-      date: "December 26, 2025",
-      title: "Christmas Store Hours",
-      description: "We will be closed on December 25th and 26th. Wishing everyone a joyful holiday season!"
+      image: NewYearImage,
+      date: "1st, January, 2026",
+      title: "New Year Store Hours",
+      description: "We will be closed on January 1st and 2nd. Wishing everyone a happy and prosperous year ahead!",
     }
   ];
 
