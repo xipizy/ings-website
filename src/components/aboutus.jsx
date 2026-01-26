@@ -8,7 +8,9 @@ export default function AboutUs() {
     const yearsInBusiness = new Date().getFullYear() - 1992;
   return (
     <>
-        <Navbar/>
+        <nav className="sticky top-0 z-2">
+            <Navbar/>
+        </nav>
         <div className="min-h-screen bg-gray-150 animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -80,6 +82,8 @@ export default function AboutUs() {
         </div>
         </div>
         <Footer/>
+
+        {/* Fade-in Animation */}
         <style jsx>{`
           @keyframes fadeIn {
             from {
