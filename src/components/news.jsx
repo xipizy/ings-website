@@ -34,7 +34,7 @@ export default function NewsUpdates() {
       image: WaitangiImage,
       date: "27th, January, 2026",
       title: "Waitangi Day Store Hours",
-      description: "We will be closed on December 25th and 26th. Wishing everyone a joyful holiday season!",
+      description: "Our stores will be closed on February 6th for Waitangi Day. We wish everyone a safe and happy holiday!",
       badge: "LATEST NEWS"
     },
     {
