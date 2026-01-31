@@ -24,7 +24,7 @@ export default function AboutUs() {
 
                 {/* Description */}
                 <p className="text-lg text-slate-800 leading-relaxed">
-                Ing's Trading has been a trusted name in the retail and wholesale service industry for over {yearsInBusiness} years. Established in 1992 in Hamilton, the business began by servicing the foodservice industry throughout the Waikato and Bay of Plenty regions. 
+                Ing's Trading has been a trusted name in the retail and wholesale service industry for over {yearsInBusiness} years. Established in 1992 in Hamilton, our business began by servicing the foodservice industry throughout the Waikato and Bay of Plenty regions. 
                 From the beginning, Ing's Trading built its reputation on reliable service, quality products, and strong customer relationships.
                 </p>
             </div>
@@ -55,7 +55,7 @@ export default function AboutUs() {
 
                 {/* Description */}
                 <p className="text-lg text-slate-800 leading-relaxed">
-                As demand increased, the business expanded its operations into Auckland in 1994, allowing it to better serve a wider customer base. This growth marked an important milestone and reflected the company's commitment to meeting the needs of its customers as they evolved.
+                As demand increased, our business expanded its operations into Auckland in 1994, allowing it to better serve a wider customer base. This growth marked an important milestone and reflected our company's commitment to meeting the needs of its customers as they evolved.
                 </p>
             </div>
 
@@ -64,7 +64,7 @@ export default function AboutUs() {
 
                 {/* Description */}
                 <p className="text-lg text-slate-800 leading-relaxed">
-                    Today, Ing's Trading operates as a dedicated retail and wholesale store, supplying a wide range of products to businesses and individual customers alike. With decades of industry experience, the company continues to provide dependable service and competitive offerings, remaining a trusted partner for customers across the regions it serves.
+                    Today, Ing's Trading operates as a dedicated retail and wholesale store, supplying a wide range of products to businesses and individual customers alike. With decades of industry experience, our company continues to provide dependable service and competitive offerings, remaining a trusted partner for customers across the regions it serves.
                 </p>
             </div>
 
