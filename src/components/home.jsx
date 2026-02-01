@@ -52,7 +52,7 @@ function Home() {
       </div>
 
       {/* Features */}
-      <section className="py-16 px-6 bg-gray-150 h-[50vh]">
+      <section className="py-16 px-6 bg-gray-150">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
