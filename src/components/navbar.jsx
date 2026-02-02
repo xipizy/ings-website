@@ -110,6 +110,16 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
+      {/* Blur Effect on dropdown */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30 transition-opacity duration-300"
+          onClick={() => setIsOpen(false)}
+          style={{ top: '64px' }}
+        />
+      )}
+
     </div>
     </>
   );
