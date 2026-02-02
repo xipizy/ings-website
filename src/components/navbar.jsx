@@ -1,4 +1,6 @@
 import logo from '../assets/logo.png';
+import { useState } from 'react';
+import { Menu, X, Home, User, Settings, Bell, Search, LogOut } from 'lucide-react';
 
 function handleClickStores() {
   window.location.href = '/stores';
@@ -17,9 +19,12 @@ function handleClickAboutUs() {
 }
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-    <header className="w-full bg-white border-b border-gray-200 shadow-sm top-0 left-0 right-0 z-">
+    {/* Deskstop Version */}
+    <div className="hidden md:flex">
+    <header className="w-full bg-white border-b border-gray-200 shadow-sm top-0 left-0 right-0 z-1">
       <div className="w-full px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo Section */}
@@ -51,6 +56,37 @@ export default function Navbar() {
         </div>
       </div>
     </header>
+    </div>
+
+    {/* Mobile Version */}
+    <div className="flex md:hidden">
+      {/* Navbar */}
+      <nav className="w-full bg-white border-b border-gray-200 shadow-sm top-0 left-0 right-0 z-1">
+        <div className="px-4 h-16 flex items-center justify-between">
+          {/* Logo Section */}
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                <img src={logo} alt="ING'S TRADING LTD. Logo" className="object-contain"/>
+            </div>
+            <div>
+              <div className="text-s font-semibold text-gray-800">ING'S TRADING LTD.</div>
+              <div className="text-xs text-gray-500 whitespace-nowrap">吴氏贸易有限公司</div>
+            </div>
+          </div>
+          {/* Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-10 h-10 flex items-center justify-center active:scale-95 transition-all duration-200"
+          >
+            {isOpen ? (
+              <X className="w-5 h-5 text-gray-600" />
+            ) : (
+              <Menu className="w-5 h-5 text-gray-600" />
+            )}
+          </button>
+        </div>
+      </nav>
+    </div>
     </>
   );
 }
