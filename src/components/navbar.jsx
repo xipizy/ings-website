@@ -61,7 +61,7 @@ export default function Navbar() {
     {/* Mobile Version */}
     <div className="flex md:hidden">
       {/* Navbar */}
-      <nav className="w-full bg-white border-b border-gray-200 shadow-sm top-0 left-0 right-0 z-1">
+      <nav className="w-full bg-white border-b border-gray-200 shadow-sm top-0 left-0 right-0 z-100">
         <div className="px-4 h-16 flex items-center justify-between">
           {/* Logo Section */}
           <div className="flex items-center gap-3">
@@ -86,6 +86,30 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
+
+      {/* Dropdown Menu */}
+      <div
+        className={`fixed top-16 left-0 right-0 z-40 transition-all duration-300 ease-out ${
+          isOpen
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 -translate-y-4 pointer-events-none'
+        }`}
+      >
+        <div className="mt-2 bg-slate-900/95 backdrop-blur-2xl border border-slate-700/50 shadow-2xl shadow-black/50 overflow-hidden flex items-center justify-center grid grid-cols-1 gap-2">
+          <button onClick={handleClickHome} className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
+              Home
+          </button>
+          <button onClick={handleClickStores} className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
+              Stores
+          </button>
+          <button onClick={handleClickWholesale} className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
+              Wholesale Inquiries
+          </button>
+          <button onClick={handleClickAboutUs} className="px-4 py-2 text-gray-600 text-sm rounded bg-white cursor-pointer hover:bg-red-400 transition-colors duration-350 hover:text-white">
+              About Us
+          </button>
+        </div>
+      </div>
     </div>
     </>
   );

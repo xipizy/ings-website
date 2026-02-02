@@ -20,12 +20,13 @@ function Home() {
       <div className="animate-fade-in">
       <div className="w-full bg-black shadow-sm top-0 left-0 right-0 h-[80vh] relative">
         <img src={mainImage} style={{ opacity: 0.3 }} alt="Main Banner" className="w-full h-full object-cover absolute z-1"/>
-        <h1 className="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl md:text-6xl font-bold text-center">
+        <h1 className="absolute z-1 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl md:text-6xl font-bold text-center">
           Your Trusted Source of Asian Goods in New Zealand
         </h1>
       </div>
 
-      {/* Icon Section */}
+      {/* Icon Section , only visible on desktop*/}
+      <div className="hidden md:flex">
       <div className="w-full bg-white h-[10vh] flex items-center justify-center">
         <div className="w-100 h-20 flex items-center justify-between">
           <div className="w-12 h-12 rounded-full flex items-center justify-center">
@@ -49,6 +50,7 @@ function Home() {
           </div>
           <h2 className="text-black text-2xl font-semibold p-4 text-center">Quality Guaranteed</h2>
         </div>
+      </div>
       </div>
 
       {/* Features */}
